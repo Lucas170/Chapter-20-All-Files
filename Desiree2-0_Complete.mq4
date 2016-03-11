@@ -488,7 +488,7 @@ double GetLot(bool IsSizingOnTrigger,double FixedLots,double RiskPerTrade,int Ye
 
    if(IsSizingOnTrigger==true) 
      {
-      output=RiskPerTrade*0.01*AccountBalance()/(MarketInfo(Symbol(),MODE_LOTSIZE)*MarketInfo(Symbol(),MODE_TICKVALUE)*STOP*K*Point); // Sizing Algo based on account size
+      output=RiskPerTrade*0.01*AccountEquity()/(MarketInfo(Symbol(),MODE_LOTSIZE)*MarketInfo(Symbol(),MODE_TICKVALUE)*STOP*K*Point); // Sizing Algo based on account size
       output=output*YenAdjustment; // Adjust for Yen Pairs
         } else {
       output=FixedLots;
